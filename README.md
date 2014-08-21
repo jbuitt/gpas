@@ -1,30 +1,17 @@
 General-Purpose Authentication System (GPAS)
 
-Provides RADIUS & LDAP authentication for:
+This software bundles various open-source tools to create a generic authentication server for:
 
 * Wi-Fi (WPA2-Enterprise)
 * VPN (L2TP/IPsec)
-* Linux System Authentication
+* Linux System Authentication (LDAP)
 
 Includes:
 
 * Web Interface for users to change their password
 * Admin Web Interface for Admins to add, edit, delete users
 
-
 O/S Target: Ubuntu Server 14.04 LTS 64-bit
 
-Included install.sh script installs the following packages:
-
-* freeradius
-* radiusclient
-* OpenSWAN
-* 389-ds
-* nginx
-* php-fpm
-* php-redis
-* php-ldap
-* redis-server
-* Net::LDAP perl module
-* Crypt::SmbHash perl module
+Includes a install script to install and configure all the required software.
 

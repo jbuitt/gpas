@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo apt-get install build-essential 389-admin 389-admin-console 389-console 389-ds-base 389-ds-base-libs 389-ds-console 389-ds-console-doc freeradius freeradius-common freeradius-ldap freeradius-utils nginx php-fpm radiusclient openswan xl2tpd uuid-runtime redis-server ntp libcrypt-smbhash-perl
+sudo apt-get install build-essential 389-admin 389-admin-console 389-console 389-ds-base 389-ds-base-libs 389-ds-console 389-ds-console-doc freeradius freeradius-common freeradius-ldap freeradius-utils nginx-mainline php-fpm radiusclient openswan xl2tpd uuid-runtime redis-server ntp libcrypt-smbhash-perl libnet-ldap-perl
 
