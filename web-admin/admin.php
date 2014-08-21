@@ -25,7 +25,7 @@
 <html lang="en">
 <head>
 	<meta name="charset" content="utf-8" />
-	<title>LDAP User Admin</title>
+	<title>General-Purpose Authentication System (GPAS) - User Admin</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
 	<script src="js/grid.locale-en.js" type="text/javascript"></script>
@@ -46,7 +46,7 @@
 		</td>
 		<td>&nbsp;</td>
 		<td>
-			<h1>Employee List</h1>
+			<h1>User List</h1>
 			<table id="userList"><tr><td></td></tr></table> 
 			<div id="pager"></div> 
 			<div id="addEditUserDialog"></div>

@@ -46,20 +46,22 @@
 		case 'sign_in':
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			$pw_db = file("lib/users");
-			for($i=0; $i<count($pw_db); $i++) {
-				list($usr, $enc_pw) = explode(":", rtrim($pw_db[$i]));
-				if ($username == $usr && sha1($password) == $enc_pw) {
-					// Create auth token and put into Redis
-					$token = rtrim(shell_exec("/usr/bin/uuidgen"));
-					$redis = new Redis();
-					$redis->connect('127.0.0.1', 6379);
-					$redis->set($token, "$username");
-					print "OK: $token";
-					return;
-				}
+			$ds = ldap_connect($LDAP_HOST);  // must be a valid LDAP server!
+			if (!$ds) {
+				print "Could not connect to LDAP server.<br /><br />";
+				return;
 			}
-			print "Invalid username or password.<br /><br />";
+			$lb = ldap_bind($ds, "uid=" . $username . ",cn=config", $password);
+			if (!$lb) {
+				print "Invalid username or password.<br /><br />";
+				return;
+			}
+			// If we got here, user/pass was OK. Create auth token and put into Redis
+			$token = rtrim(shell_exec("/usr/bin/uuidgen"));
+			$redis = new Redis();
+			$redis->connect('127.0.0.1', 6379);
+			$redis->set($token, "$username");
+			print "OK: $token";
 			break;
 
 		case 'sign_out':
