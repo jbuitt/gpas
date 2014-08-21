@@ -1,4 +1,12 @@
 #!/bin/bash
 
-sudo apt-get install build-essential 389-admin 389-admin-console 389-console 389-ds-base 389-ds-base-libs 389-ds-console 389-ds-console-doc freeradius freeradius-common freeradius-ldap freeradius-utils nginx-mainline php-fpm radiusclient openswan xl2tpd uuid-runtime redis-server ntp libcrypt-smbhash-perl libnet-ldap-perl
+# Add APT repo for nginx-mainline and php-fpm
+if [ ! -e "/etc/apt/sources.list.d/erianna.list" ]; then
+	echo "deb http://deb.erianna.com/ trusty main" | sudo tee /etc/apt/sources.list.d/erianna.list 
+	/bin/wget -q -O- http://deb.erianna.com/gnugpg.key | sudo apt-key add -
+	sudo /usr/bin/apt-get update
+fi
+
+# Install packages
+sudo /usr/bin/apt-get install build-essential 389-admin 389-admin-console 389-console 389-ds-base 389-ds-base-libs 389-ds-console 389-ds-console-doc freeradius freeradius-common freeradius-ldap freeradius-utils nginx-mainline php-fpm radiusclient1 openswan xl2tpd uuid-runtime redis-server ntp libcrypt-smbhash-perl libnet-ldap-perl
 
