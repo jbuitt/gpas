@@ -8,7 +8,7 @@ fi
 # Add APT repo for nginx-mainline and php-fpm
 if [ ! -e "/etc/apt/sources.list.d/erianna.list" ]; then
 	echo "deb http://deb.erianna.com/ trusty main" | sudo tee /etc/apt/sources.list.d/erianna.list 
-	/bin/wget -q -O- http://deb.erianna.com/gnugpg.key | sudo apt-key add -
+	/usr/bin/wget -q -O- http://deb.erianna.com/gnugpg.key | sudo /usr/bin/apt-key add -
 	sudo /usr/bin/apt-get update
 fi
 
