@@ -1,0 +1,29 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+
+print OUTFILE "[General]\n";
+print OUTFILE "FullMachineName= dir.example.com\n";
+print OUTFILE "SuiteSpotUserID= nobody\n";
+print OUTFILE "SuiteSpotGroup= nobody\n";
+print OUTFILE "AdminDomain= example.com\n";
+print OUTFILE "ConfigDirectoryAdminID= admin\n";
+print OUTFILE "ConfigDirectoryAdminPwd= admin\n";
+print OUTFILE "ConfigDirectoryLdapURL= ldap://dir.example.com:389/o=NetscapeRoot\n";
+print OUTFILE "\n";
+print OUTFILE "[slapd]\n";
+print OUTFILE "SlapdConfigForMC= Yes\n";
+print OUTFILE "UseExistingMC= No\n";
+print OUTFILE "ServerPort= 389\n";
+print OUTFILE "ServerIdentifier= dir\n";
+print OUTFILE "Suffix= dc=example,dc=com\n"; 
+print OUTFILE "RootDN= cn=Directory Manager\n";
+print OUTFILE "RootDNPwd= password123\n";
+print OUTFILE "\n";
+print OUTFILE "[admin]\n";
+print OUTFILE "Port= 9830\n";
+print OUTFILE "ServerIpAddress= 111.11.11.11\n";
+print OUTFILE "ServerAdminID= admin\n";
+print OUTFILE "ServerAdminPwd= admin\n";
+

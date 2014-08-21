@@ -1,0 +1,27 @@
+
+1. Install required packages:
+
+389-admin
+389-admin-console
+389-console
+389-ds-base
+389-ds-base-libs
+389-ds-console
+389-ds-console-doc
+freeradius
+freeradius-ldap
+freeradius-utils
+radiusclient1
+nginx
+php
+php-ldap
+
+2. Configure 389-ds:
+
+   2a. Copy Samba LDIF schema in place
+   2b. Run setup-ds-admin
+
+3. Configure FreeRADIUS
+
+4. 
+
