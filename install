@@ -1,29 +1,4 @@
-#!/usr/bin/perl -w
+#!/bin/bash
 
-use strict;
-
-
-print OUTFILE "[General]\n";
-print OUTFILE "FullMachineName= dir.example.com\n";
-print OUTFILE "SuiteSpotUserID= nobody\n";
-print OUTFILE "SuiteSpotGroup= nobody\n";
-print OUTFILE "AdminDomain= example.com\n";
-print OUTFILE "ConfigDirectoryAdminID= admin\n";
-print OUTFILE "ConfigDirectoryAdminPwd= admin\n";
-print OUTFILE "ConfigDirectoryLdapURL= ldap://dir.example.com:389/o=NetscapeRoot\n";
-print OUTFILE "\n";
-print OUTFILE "[slapd]\n";
-print OUTFILE "SlapdConfigForMC= Yes\n";
-print OUTFILE "UseExistingMC= No\n";
-print OUTFILE "ServerPort= 389\n";
-print OUTFILE "ServerIdentifier= dir\n";
-print OUTFILE "Suffix= dc=example,dc=com\n"; 
-print OUTFILE "RootDN= cn=Directory Manager\n";
-print OUTFILE "RootDNPwd= password123\n";
-print OUTFILE "\n";
-print OUTFILE "[admin]\n";
-print OUTFILE "Port= 9830\n";
-print OUTFILE "ServerIpAddress= 111.11.11.11\n";
-print OUTFILE "ServerAdminID= admin\n";
-print OUTFILE "ServerAdminPwd= admin\n";
+sudo apt-get install build-essential 389-admin 389-admin-console 389-console 389-ds-base 389-ds-base-libs 389-ds-console 389-ds-console-doc freeradius freeradius-common freeradius-ldap freeradius-utils nginx php-fpm radiusclient openswan xl2tpd uuid-runtime redis-server ntp libcrypt-smbhash-perl
 
