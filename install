@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# If wget is not installed, install it
+if [ "$(which wget)" = "" ]; then
+	sudo /usr/bin/apt-get -q -y install wget
+fi
+
 # Add APT repo for nginx-mainline and php-fpm
 if [ ! -e "/etc/apt/sources.list.d/erianna.list" ]; then
 	echo "deb http://deb.erianna.com/ trusty main" | sudo tee /etc/apt/sources.list.d/erianna.list 
@@ -8,5 +13,5 @@ if [ ! -e "/etc/apt/sources.list.d/erianna.list" ]; then
 fi
 
 # Install packages
-sudo /usr/bin/apt-get install build-essential 389-admin 389-admin-console 389-console 389-ds-base 389-ds-base-libs 389-ds-console 389-ds-console-doc freeradius freeradius-common freeradius-ldap freeradius-utils nginx-mainline php-fpm radiusclient1 openswan xl2tpd uuid-runtime redis-server ntp libcrypt-smbhash-perl libnet-ldap-perl
+sudo /usr/bin/apt-get -y install build-essential 389-admin 389-admin-console 389-console 389-ds-base 389-ds-base-libs 389-ds-console 389-ds-console-doc freeradius freeradius-common freeradius-ldap freeradius-utils nginx-mainline php-fpm radiusclient1 openswan xl2tpd uuid-runtime redis-server ntp libcrypt-smbhash-perl libnet-ldap-perl
 
