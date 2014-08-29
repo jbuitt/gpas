@@ -1,0 +1,4 @@
+dn: cn=config
+changetype: modify
+replace: nsslapd-securelistenhost
+nsslapd-securelistenhost: 0.0.0.0

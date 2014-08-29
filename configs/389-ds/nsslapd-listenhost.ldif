@@ -1,0 +1,4 @@
+dn: cn=config
+changetype: modify
+replace: nsslapd-listenhost
+nsslapd-listenhost: 0.0.0.0
